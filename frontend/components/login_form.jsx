@@ -3,6 +3,7 @@ const Link = require('react-router').Link;
 const SessionActions = require('../actions/session_actions');
 const SessionStore = require('../stores/session_store');
 const ErrorStore = require('../stores/error_store');
+const ErrorActions = require('../actions/error_actions.js');
 
 const LoginForm = React.createClass({
 
@@ -11,6 +12,7 @@ const LoginForm = React.createClass({
 	},
 
   getInitialState() {
+    ErrorActions.clearErrors();
     return {
       username: "",
       password: ""
@@ -80,7 +82,7 @@ const LoginForm = React.createClass({
 		return (
 			<div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-	        Welcome to BenchBnB!
+	        Welcome to Bellenist!
 					<br/>
 					Please { this.formType() } or { navLink }
 
