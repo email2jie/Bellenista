@@ -8,6 +8,6 @@ const HashHistory = ReactRouter.hashHistory;
 
 
 document.addEventListener("DOMContentLoaded", function () {
-ReactDOM.render(<div>Bellenista</div>,
+ReactDOM.render(<div>hi</div>,
     document.getElementById('content')
 )});
