@@ -6,6 +6,7 @@ const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
 const HashHistory = ReactRouter.hashHistory;
 
+const SessionApiUtil = window.SessionApiUtil = require('./util/session_api_util.js');
 
 document.addEventListener("DOMContentLoaded", function () {
 ReactDOM.render(<div>hi</div>,
