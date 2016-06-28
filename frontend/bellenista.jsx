@@ -20,7 +20,19 @@ const appRouter = (
   </Router>
 );
 
+function _ensureLoggedIn(nextState, replace){
+
+  if(!SessionStore.isUserLoggedIn()){
+
+  replace('/login');
+  
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+if (window.currentUser){
+  SessionActions.receiveCurrentUser(window.currentUser);
+}
 ReactDOM.render(appRouter,
     document.getElementById('content')
 )});
