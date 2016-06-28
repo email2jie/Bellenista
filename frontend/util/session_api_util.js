@@ -6,11 +6,8 @@ const SessionApiUtil = {
      data: {user},
      success,
      error(xhr){
-     
        const errors = xhr.responseJSON;
        error("login", errors);
-     
-     
      }
     });
   
@@ -25,11 +22,7 @@ const SessionApiUtil = {
       error: function (){
           console.log("Logout error in SessionApiUtil#logout");
       }
-    
-    
     });
-  
-  
   },
 
   signUp(user, success, error){
@@ -44,13 +37,10 @@ const SessionApiUtil = {
         error("signup", errors);
       }
     });
-  
-  
   },
 
   fetchCurrentUser(success, complete){
     $.ajax({
-    
       url: '/api/session',
       success,
       error: function(xhr) {
