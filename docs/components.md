@@ -5,10 +5,9 @@
   * **Product-Category**
     * Search
     * CategoryId
-  * **Product**
+  * **ProductIndex**
     * Search
-    * ProductIndex
-    * **ProudctDetail**
+    * **ProductIndexItem**
       * ProductTags
       * Reviews
       * Extra Info
@@ -17,8 +16,8 @@
 ## Routes
 
 * **component:** `App` **path:** `/`
-  * **component:** `Product-Category` **path:** index
-  	* **component:** `Product` **path:** `product-category/:categoryId`
-    	* **component:** `ProductDetail` **path:** `product/:productId`
+  * **component:** `Product-Category` **IndexRoute** 
+ 	* **component:** `ProductCategory` **path:** `product-category/:categoryId`
+  * **component:** `ProductIndexItem` **path:** `product/:productId`
 
 

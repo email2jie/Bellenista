@@ -44,7 +44,7 @@ Bellenista is a web application that will be build using Ruby on Rails and React
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (1 day, W1 Tu 6pm)
+### Phase 1: Backend setup and Front End User Authentication (2 day, W1 Wed 6pm)
 
 **Objective:** Functioning rails project with Authentication
 
@@ -54,7 +54,7 @@ Bellenista is a web application that will be build using Ruby on Rails and React
 - [ ] user signup/signin pages
 - [ ] blank landing page after signin
 
-### Phase 2: Products Model, API, and basic APIUtil (1.5 days, W1 Th 12pm)
+### Phase 2: Products Model, API, and basic APIUtil (1.5 days, W1 F 12pm)
 
 **Objective:** Products can be created, read, edited and destroyed through
 the API.
@@ -67,7 +67,7 @@ the API.
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
 
-### Phase 3: Flux Architecture and Router (1.5 days, W1 F 6pm)
+### Phase 3: Flux Architecture and Router (1.5 days, W2 Mon 6pm)
 
 **Objective:** Products can be created, read, edited and destroyed with the
 user interface.
@@ -81,7 +81,7 @@ user interface.
 - [ ] save Products to the DB when the form loses focus or is left idle
   after editing.
 
-### Phase 4: Start Styling (0.5 days, W2 M 12pm)
+### Phase 4: Start Styling (0.5 days, W2 Tu 12pm)
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
@@ -89,7 +89,7 @@ user interface.
 - [ ] position elements on the page
 - [ ] add basic colors & styles
 
-### Phase 5: Product-Category (1 day, W2 Tu 12pm)
+### Phase 5: Product-Category (1 day, W2 Wed 12pm)
 
 **Objective:** Products belong to Product-Category, and can be viewed by category.
 
