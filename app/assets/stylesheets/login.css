@@ -1,17 +1,53 @@
-div .login-form-container {
+.login-form-container {
 
   width: 60%;
   height: auto;
   margin: auto;
   display: flex;
   position: fixed;
-  top: 40%;
-  left: 50%;
+  top: 30%;
+  left: 45%;
   margin-top: -50px;
   margin-left: -100px;
 
 }
 
-form .login-form-box {
-
+.login-form {
+  padding: 50px 80px;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
+
+.login-form > label {
+  display: block;
+  font-weight: 700;
+  padding: 0 0 5px 0;
+}
+
+.submit {
+  margin: 20px 0 0 0;
+  padding: 0 0 3px 0;
+}
+.submit > input {
+  position: relative;
+  padding: 10px 15px;
+  color: #fff;
+  background: #aa7fff;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.submit > input:hover {
+  background: #aa7fff;
+  cursor: pointer;
+  box-shadow: 0 3px 0 0 #5500ff;
+}
+
+
+.submit > input:active {
+  top: 3px;
+  background: #aa7fff;
+  box-shadow: none;
+}
+

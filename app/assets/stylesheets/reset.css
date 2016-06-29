@@ -16,6 +16,9 @@ span, article, footer, time, small {
 
 }
 
+a {
+  color: #aa7fff;
+}
 ul {
   list-style: none;
 

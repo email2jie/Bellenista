@@ -1,0 +1,15 @@
+topbar {
+  content: "";
+  display: block;
+  height: 15px;
+  width: 60%;
+  margin: auto;
+}
+
+.login-signup {
+
+  width: 130px;
+  float: right;
+  position: relative;
+
+}

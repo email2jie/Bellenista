@@ -82,36 +82,35 @@ const LoginForm = React.createClass({
 		return (
 			<div className="login-form-container">
 				<form action="#" onSubmit={this.handleSubmit} className="login-form-box">
+				<div className="login-form">
 	        Welcome to Bellenista!
 					<br/>
 					Please { this.formType() } or { navLink }
 
 	        { this.fieldErrors("base") }
-					<div className="login-form">
+          <br/>
 		        <br />
-            <div class="mdl-textfield mdl-js-textfield">
-						<label class="mdl-textfield__label"> Username:
+						<label> Username:
 		          { this.fieldErrors("username") }
-							<input class="mdl-textfield__input" type="text"
+							<input type="text"
 		            value={this.state.username}
 		            onChange={this.update("username")}
 								className="login-input" />
 						</label>
-            </div>
 
 		        <br />
-            <div class="mdl-textfield mdl-js-textfield">
-						<label class="mdl-textfield__label"> Password:
+						<label> Password:
 		          { this.fieldErrors("password") }
-		          <input class="mdl-textfield__input" type="password"
+		          <input type="password"
 		            value={this.state.password}
 		            onChange={this.update("password")}
 								className="login-input" />
 						</label>
-            </div>
 
 		        <br />
-						<input class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" type="submit" value="Submit" />
+            <div className="submit">
+						<input className="button" type="submit" value="Submit" />
+            </div>
 					</div>
 				</form>
 			</div>
