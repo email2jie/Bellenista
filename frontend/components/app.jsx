@@ -13,6 +13,7 @@ const App = React.createClass({
     SessionActions.logOut();
   },
 
+
   greeting() {
     if (SessionStore.isUserLoggedIn()) {
 
