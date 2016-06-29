@@ -1,0 +1,17 @@
+div .login-form-container {
+
+  width: 60%;
+  height: auto;
+  margin: auto;
+  display: flex;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+
+}
+
+form .login-form-box {
+
+}

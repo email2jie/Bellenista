@@ -1,0 +1,58 @@
+header !important {
+
+  display: flex;
+  position: relative;
+
+  margin: auto;
+  width: 60%;
+}
+
+header ul {
+
+
+  display: flex;
+  line-height: 10;
+  padding: 0 50px;
+}
+
+header h1 {
+  width: 30px;
+  height: 20px;
+  margin: auto;
+  font-weight: 700;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+  padding: 0 20px;
+  display: absolute;
+  font-size: large;
+}
+
+header a.header-link {
+  line-height: 4;
+
+  width: 30px;
+
+}
+
+header ul li{
+
+  padding: 0 20px;
+  margin: auto;
+  
+}
+
+header nav.Main {
+
+  margin: auto;
+  width: 60%;
+}
+
+topbar {
+  content: "";
+  display: block;
+  height: 15px;
+  width: 60%;
+  margin: auto;
+}
+
+
