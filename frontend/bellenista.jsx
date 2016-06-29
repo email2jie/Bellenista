@@ -6,8 +6,11 @@ const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
 const HashHistory = ReactRouter.hashHistory;
 
-const SessionApiUtil = window.SessionApiUtil = require('./util/session_api_util.js');
-const SessionActions = window.SessionActions = require('./actions/session_actions.js');
+const ProductApiUtil = window.ProductApiUtil = require('./util/product_api_util.js');
+const ProductActions = window.ProductActions = require('./actions/product_action.js');
+
+const SessionActions = require('./actions/session_actions.js');
+const SessionStore = require('./stores/session_store.js');
 const LoginForm = require ('./components/login_form.jsx');
 const App = require('./components/app');
 
