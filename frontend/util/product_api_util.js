@@ -1,5 +1,5 @@
 const ProductApiUtil = {
-  fetchAllProduct: function(success){
+  fetchAllProducts: function(success){
     $.ajax({
       url: 'api/products',
       success

@@ -8,6 +8,7 @@ const HashHistory = ReactRouter.hashHistory;
 
 const ProductApiUtil = window.ProductApiUtil = require('./util/product_api_util.js');
 const ProductActions = window.ProductActions = require('./actions/product_action.js');
+const ProductStore = require('./stores/product_store.js');
 
 const SessionActions = require('./actions/session_actions.js');
 const SessionStore = require('./stores/session_store.js');

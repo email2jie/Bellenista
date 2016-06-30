@@ -16,7 +16,7 @@ class Api::ProductsController < ApplicationController
     if(@product.save)
       render :show
     else
-      @errors = product.errors.full_messages
+      @errors = @product.errors.full_messages
       render :show, status: 422
     end 
   end
@@ -32,7 +32,7 @@ class Api::ProductsController < ApplicationController
     if(@product.destroy)
       render "/api/products/show", status: 200
     else
-      @errors = product.errors.full_messages
+      @errors = @product.errors.full_messages
       render "api/shared/error", status: 422
     end
   end

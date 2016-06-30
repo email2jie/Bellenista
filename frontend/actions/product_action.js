@@ -7,10 +7,19 @@ const ProductActions = {
     ProductApiUtil.createProduct(product, this.receiveProduct);
   },
 
+  fetchAllProducts(){
+    ProductApiUtil.fetchAllProducts(this.receiveAllProducts);
+  },
   deleteProduct(product){
     ProductApiUtil.deleteProduct(product, this.removeProduct);
   },
 
+  receiveAllProducts(products){
+    AppDispatcher.dispatch({
+      actionType: ProductConstants.PRODUCTS_RECEIVED,
+      products: products
+    });
+  },
   receiveProduct(product){
     AppDispatcher.dispatch({
       actionType: ProductConstants.PRODUCT_RECEIVED,
