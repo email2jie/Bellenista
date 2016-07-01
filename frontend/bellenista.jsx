@@ -1,4 +1,3 @@
-const newrelic = require('newrelic');
 const React = require('react');
 const ReactDOM = require('react-dom');
 const ReactRouter = require('react-router');
