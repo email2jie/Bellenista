@@ -5,12 +5,17 @@ const ProductApiUtil = {
       success
     });
   },
-  createProduct: function(product, success){
+  createProduct: function(product, success, error){
     $.ajax({
       url: 'api/products',
       type: 'POST',
       data: product,
-      success
+      success,
+      error(xhr) {
+        const errors = xhr.responseJSON;
+        console.log(errors);
+        error("products/new", errors);
+      }
     });
   },
   deleteProduct: function(data, success){

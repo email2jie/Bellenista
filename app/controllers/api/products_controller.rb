@@ -16,8 +16,8 @@ class Api::ProductsController < ApplicationController
     if(@product.save)
       render :show
     else
-      @errors = @product.errors.full_messages
-      render :show, status: 422
+      #@errors = @product.errors.full_messages
+      render json: @product.errors, status: 422
     end 
   end
 

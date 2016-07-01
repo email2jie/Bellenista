@@ -2,7 +2,7 @@
 
 [Heroku link][heroku] - Production Link
 
-[heroku]: http://bellenista.herokuapp.com
+[heroku]: http://bellenista.org
 [bellenista]: http://www.bellenista.com
 
 ## Minimum Viable Product
