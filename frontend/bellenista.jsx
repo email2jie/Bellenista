@@ -6,9 +6,10 @@ const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
 const HashHistory = ReactRouter.hashHistory;
 
-const ProductApiUtil = window.ProductApiUtil = require('./util/product_api_util.js');
-const ProductActions = window.ProductActions = require('./actions/product_action.js');
+const ProductApiUtil = require('./util/product_api_util.js');
+const ProductActions = require('./actions/product_action.js');
 const ProductStore = require('./stores/product_store.js');
+const Products = require('./components/product.jsx');
 
 const SessionActions = require('./actions/session_actions.js');
 const SessionStore = require('./stores/session_store.js');
@@ -20,6 +21,7 @@ const appRouter = (
     <Route path="/" component={ App }>
       <Route path="/login" component={ LoginForm } />
       <Route path="/signup" component={ LoginForm } />
+      <Route path="/products" component={ Products } />
     </Route>
   </Router>
 );

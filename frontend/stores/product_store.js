@@ -5,8 +5,6 @@ const ProductStore = new Store(AppDispatcher);
 
 let _products = {};
 
-window.ProductStore = ProductStore;
-
 ProductStore.all = function(){
   return Object.assign({}, _products);
 };

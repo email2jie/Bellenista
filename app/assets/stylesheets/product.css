@@ -1,0 +1,17 @@
+product-content {
+  display: block;
+  width: 60%;
+  margin: auto;
+}
+
+
+product-content li {
+  padding: 5px;
+}
+
+product-content span {
+
+  display: list-item;
+
+
+}
