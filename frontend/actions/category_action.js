@@ -5,8 +5,8 @@ const ErrorActions = require('../actions/error_actions.js');
 const hashHistory = require('react-router').hashHistory;
 
 const CategoryActions = {
-  createCategory(category){
-    CategoryApiUtil.createCategory(category, this.receiveCategory, ErrorActions.setErrors);
+  createCategory(category, resetInput){
+    CategoryApiUtil.createCategory(category, this.receiveCategory, ErrorActions.setErrors, resetInput);
   },
 
   fetchAllCategories(){
@@ -27,7 +27,6 @@ const CategoryActions = {
       actionType: CategoryConstants.CATEGORY_RECEIVED,
       category: category
     });
-  hashHistory.push("/product-categories");
   },
 
   removeCategory(category){

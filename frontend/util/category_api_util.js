@@ -5,12 +5,16 @@ const CategoryApiUtil = {
       success
     });
   },
-  createCategory: function(category, success, error){
+  createCategory: function(category, success, error, resetInput){
     $.ajax({
       url: 'api/product_categories',
       type: 'POST',
       data: category,
-      success,
+      success(resp){
+      
+        success(resp);
+        resetInput();
+      },
       error(xhr) {
         const errors = xhr.responseJSON;
         console.log(errors);

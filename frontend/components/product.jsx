@@ -1,8 +1,8 @@
 const React = require('react');
 const Link = require('react-router').Link;
 const SessionStore = require('../stores/session_store.js');
-const ProductStore = window.ProductStore = require('../stores/product_store.js');
-const ProductActions = window.ProductActions = require('../actions/product_action.js');
+const ProductStore = require('../stores/product_store.js');
+const ProductActions = require('../actions/product_action.js');
 const ProductItem = require('./product_item');
 
 const Product = React.createClass({

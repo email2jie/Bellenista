@@ -6,8 +6,10 @@ const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 
-const CategoryActions = window.CategoryActions = require('./actions/category_action.js');
-const CategoryApiUtil = window.CategoryApiUtil = require('./util/category_api_util.js');
+const CategoryActions = require('./actions/category_action.js');
+const CategoryApiUtil = require('./util/category_api_util.js');
+const CategoryStore = require('./stores/category_store');
+const CategoryForm = require('./components/category_form.jsx');
 
 const ProductApiUtil = require('./util/product_api_util.js');
 const ProductActions = require('./actions/product_action.js');
@@ -27,6 +29,7 @@ const appRouter = (
       <Route path="/signup" component={ LoginForm } />
       <Route path="/products" component={ Products } />
       <Route path="/products/new" component={ProductForm} onEnter={_ensureLoggedIn} />
+      <Route path="/product-categories/new" component={CategoryForm} onEnter={_ensureLoggedIn} />
     </Route>
   </Router>
 );
