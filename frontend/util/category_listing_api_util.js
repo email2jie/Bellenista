@@ -20,7 +20,7 @@ const CategoryListingApiUtil = {
   },
   deleteListing: function(data, success){
     $.ajax({
-      url: `api/category_listings/${data.listing.id}`,
+      url: `api/category_listings/${data.cat_list.id}`,
       type: 'DELETE',
       success
     });
