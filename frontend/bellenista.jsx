@@ -7,6 +7,7 @@ const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 
 const CategoryListingApiUtil = window.listingApi = require('./util/category_listing_api_util.js');
+const CategoryListingActions = window.listingActions = require('./actions/category_listing_action.js');
 
 const CategoryActions = require('./actions/category_action.js');
 const CategoryApiUtil = require('./util/category_api_util.js');

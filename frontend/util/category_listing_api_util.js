@@ -1,11 +1,11 @@
 const CategoryListingApiUtil = {
-  fetchAllListings: function(success){
+  fetchAllCategoryListings: function(success){
     $.ajax({
       url: 'api/category_listings',
       success
     });
   },
-  createListing: function(category, success, error){
+  createCategoryListing: function(category, success, error){
     $.ajax({
       url: 'api/category_listings',
       type: 'POST',
@@ -18,7 +18,7 @@ const CategoryListingApiUtil = {
       }
     });
   },
-  deleteListing: function(data, success){
+  deleteCategoryListing: function(data, success){
     $.ajax({
       url: `api/category_listings/${data.cat_list.id}`,
       type: 'DELETE',
