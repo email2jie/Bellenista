@@ -1,0 +1,2 @@
+module Api::CategoryListingsHelper
+end

@@ -1,1 +1,1 @@
-json.partial! '/api/product_categories/category', category: @category
+json.partial! 'category', category: @category

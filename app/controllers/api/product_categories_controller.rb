@@ -21,7 +21,7 @@ class Api::ProductCategoriesController < ApplicationController
       render "/api/product_categories/show", status: 200
     else
       @errors = @product.errors.full_messages
-      render "api/shared/error", status: 422
+      render "/api/shared/error", status: 422
     end
   end
 
