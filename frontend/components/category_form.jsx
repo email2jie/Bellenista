@@ -62,6 +62,7 @@ const CategoryForm = React.createClass({
                     onChange={this.update("name")} 
                     className="name-input" />
                 </label>
+                <label>test</label>
                 <br/>
                 <input type="submit" value="Submit" />
               </form>
