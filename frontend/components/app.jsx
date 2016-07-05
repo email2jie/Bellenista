@@ -51,6 +51,7 @@ const App = React.createClass({
               <li>Dresses</li>
               <li>Skirts</li>
               <li>Jackets & Coats</li>
+              <li><Link to="/products/new" className="new-product">Add Product</Link></li>
 
             </ul>
           
