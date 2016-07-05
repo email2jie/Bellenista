@@ -3,15 +3,13 @@ class Product < ActiveRecord::Base
   validates :name, :SKU, uniqueness: true
 
   has_many :category_listings,
+    inverse_of: :product,
+    dependent: :destroy,
     primary_key: :id,
     foreign_key: :productId,
     class_name: :CategoryListing
 
   has_many :categories,
     through: :category_listings,
-    source: :ProductCategory
-  
-  
-    
-  
+    source: :product_category
 end

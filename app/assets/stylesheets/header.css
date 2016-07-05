@@ -7,9 +7,15 @@ header {
 header ul {
 
 
-  display: flex;
-  line-height: 10;
-  padding: 0 50px;
+  margin: auto;
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  
+
+  /*display: flex;*/
+  /*line-height: 10;*/
+  /*padding: 0 50px;*/
 }
 
 header h1 {
@@ -33,15 +39,28 @@ header a.header-link {
 
 header ul li{
 
-  padding: 0 20px;
-  margin: auto;
+  /*display: flex;*/
+  /*padding: 0 20px;*/
+  /*margin: auto;*/
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 25px;
+  text-decoration: none;
   
+}
+
+header ul li:hover {
+
+  background-color: #eee;
 }
 
 header nav.Main {
 
+  display: flex;
   margin: auto;
   width: 90%;
+  padding-top: 50px;
 }
 
 topbar {

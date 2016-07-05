@@ -25,6 +25,12 @@ class Api::ProductsController < ApplicationController
   end
 
   def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      render :show
+    else
+      render json: @product.errors, status: 422
+    end
   end
 
   def destroy
@@ -38,7 +44,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :SKU, :price, :stock, :description)
+    params.require(:product).permit(:name, :SKU, :price, :stock, :description, category_ids: [])
   end
 
 

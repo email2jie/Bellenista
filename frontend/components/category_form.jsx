@@ -57,7 +57,10 @@ const CategoryForm = React.createClass({
               <form onSubmit={this.handleSubmit} className="category-form-box">
                 <label> Product Category:
                   {this.fieldErrors("name")}
-                  <input type="text" value={this.state.name} onChange={this.update("name")} className="name-input" />
+                  <input type="text" 
+                    value={this.state.name} 
+                    onChange={this.update("name")} 
+                    className="name-input" />
                 </label>
                 <br/>
                 <input type="submit" value="Submit" />
