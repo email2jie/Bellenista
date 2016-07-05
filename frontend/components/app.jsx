@@ -52,6 +52,7 @@ const App = React.createClass({
               <li>Skirts</li>
               <li>Jackets & Coats</li>
               <li><Link to="/products/new" className="new-product">Add Product</Link></li>
+              <li><Link to="/product-categories/new" className="new-categories-product">Add Product Category</Link></li>
 
             </ul>
           
