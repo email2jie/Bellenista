@@ -1,0 +1,11 @@
+.new-category-form {
+  width: 60%;
+  padding: 25px;
+  margin: auto;
+}
+
+form.category-form-box input {
+  background-color: #eee;
+}
+
+
