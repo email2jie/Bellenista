@@ -9,7 +9,12 @@ const UploadButton = React.createClass({
       (error, images) => {
         
       if(error === null){
-        this.props.postImage(image[0].url);
+const image = {
+image: {name: images[0].original_filename, url: images[0].url, thumb_url: images[0].thumbnail_url}
+
+} 
+
+        this.props.postImage(image);
        }
       
       });
