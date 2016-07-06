@@ -69,7 +69,25 @@ const LoginForm = React.createClass({
   update(property) {
     return (e) => this.setState({[property]: e.target.value});
   },
-
+  handleDemoLogin(e){
+    let formData = {};
+    if(e.target.value === "Guest Demo"){
+    formData = {
+      username: "guest",
+      password: "password"
+    };
+    }else{
+    formData = {
+      username: "admin",
+      password: "password"
+    };
+    }
+    if (this.props.location.pathname === "/login") {
+      SessionActions.logIn(formData);
+    } else {
+      SessionActions.signUp(formData);
+    }
+  },
 	render() {
 
     let navLink;
@@ -110,6 +128,8 @@ const LoginForm = React.createClass({
 		        <br />
             <div className="submit">
 						<input className="button" type="submit" value="Submit" />
+            <input className="button" type="button" value="Guest Demo" onClick={this.handleDemoLogin} />
+            <input className="button" type="button" value="Admin Demo" onClick={this.handleDemoLogin} />
             </div>
 					</div>
 				</form>

@@ -6,8 +6,8 @@ const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 
-const CategoryListingApiUtil = window.listingApi = require('./util/category_listing_api_util.js');
-const CategoryListingActions = window.listingActions = require('./actions/category_listing_action.js');
+const CategoryListingApiUtil = require('./util/category_listing_api_util.js');
+const CategoryListingActions = require('./actions/category_listing_action.js');
 
 const CategoryActions = require('./actions/category_action.js');
 const CategoryApiUtil = require('./util/category_api_util.js');
@@ -25,13 +25,16 @@ const SessionStore = require('./stores/session_store.js');
 const LoginForm = require ('./components/login_form.jsx');
 const App = require('./components/app');
 
+const My404Component = require('./components/my_404_component');
+
 const appRouter = (
   <Router history={ hashHistory }>
     <Route path="/" component={ App }>
       <Route path="/login" component={ LoginForm } />
       <Route path="/signup" component={ LoginForm } />
       <Route path="/products" component={ Products } />
-      <Route path="/products/new" component={ProductForm} onEnter={_ensureLoggedIn} />
+      <Route path="/products/new" component={ProductForm} onEnter={_ensureAdminUser} />
+      <Route path='*' component={My404Component} />
     </Route>
   </Router>
 );
@@ -43,6 +46,14 @@ function _ensureLoggedIn(nextState, replace){
   replace('/login');
   
   }
+}
+function _ensureAdminUser(nextState, replace){
+
+  if(SessionStore.currentUser().username !== "admin"){
+   alert("not admin!");
+   replace('/login');
+  }
+  
 }
 
 document.addEventListener("DOMContentLoaded", function () {

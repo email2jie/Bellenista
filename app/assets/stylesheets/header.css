@@ -19,15 +19,15 @@ header ul {
 }
 
 header h1 {
-  width: 30px;
+  width: 150px;
   height: 20px;
   margin: auto;
   font-weight: 700;
   border-right: 1px solid white;
   border-left: 1px solid white;
-  padding: 0 20px;
   display: absolute;
   font-size: large;
+  text-align: center;
 }
 
 header a.header-link {
