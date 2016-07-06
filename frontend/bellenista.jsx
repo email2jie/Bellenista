@@ -8,7 +8,7 @@ const hashHistory = ReactRouter.hashHistory;
 
 const ImageApiUtil = window.ImageApiUtil = require('./util/image_api_util.js');
 const ImageActions = window.ImageActions = require('./actions/image_actions.js');
-//const ImageStore = window.ImageStore = require('./stores/image_store');
+const ImageStore = window.ImageStore = require('./stores/image_store');
 
 const CategoryListingApiUtil = require('./util/category_listing_api_util.js');
 const CategoryListingActions = require('./actions/category_listing_action.js');
