@@ -1,0 +1,9 @@
+.splash {
+
+  background-image: url("file:///home/jie/Documents/appacademy/BellenistaApp/app/assets/images/front_page.jpg");
+  z-index: 999;
+  width: auto;
+  height: auto;
+  display: relative;
+
+}

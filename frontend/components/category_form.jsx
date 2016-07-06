@@ -3,7 +3,6 @@ const Link = require('react-router').Link;
 const SessionStore = require('../stores/session_store.js');
 const ErrorStore = require('../stores/error_store.js');
 const CategoryActions = require('../actions/category_action.js');
-const CategoryIndex = require('../components/categoryIndex.jsx');
 const ErrorActions = require('../actions/error_actions.js');
 
 const CategoryForm = React.createClass({

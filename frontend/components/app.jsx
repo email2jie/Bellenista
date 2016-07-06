@@ -21,6 +21,8 @@ const App = React.createClass({
     		<hgroup className="header-group">
     			<h2 className="header-name">Hi, {SessionStore.currentUser().username}!</h2>
     			<input className="header-button" type="submit" value="logout" onClick={ this._handleLogOut } />
+          <br/>
+          <Link to="/products/new" className="new-product">Add Product</Link>
     		</hgroup>
     	);
     } else if ( !["/login", "/signup"].includes(this.props.location.pathname) ) {
@@ -37,6 +39,7 @@ const App = React.createClass({
   render() {
     return (
       <div>
+        <div className="splash"></div>
         <topbar>
           { this.greeting() }
         </topbar>
@@ -51,7 +54,6 @@ const App = React.createClass({
               <li>Dresses</li>
               <li>Skirts</li>
               <li>Jackets & Coats</li>
-              <li><Link to="/products/new" className="new-product">Add Product</Link></li>
 
             </ul>
           
