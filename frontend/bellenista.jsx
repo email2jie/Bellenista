@@ -32,7 +32,6 @@ const appRouter = (
       <Route path="/signup" component={ LoginForm } />
       <Route path="/products" component={ Products } />
       <Route path="/products/new" component={ProductForm} onEnter={_ensureLoggedIn} />
-      <Route path="/product-categories/new" component={CategoryForm} onEnter={_ensureLoggedIn} />
     </Route>
   </Router>
 );

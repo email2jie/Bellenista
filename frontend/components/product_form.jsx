@@ -5,6 +5,8 @@ const ErrorStore = require('../stores/error_store.js');
 const ProductActions = require('../actions/product_action.js');
 const CategoryStore = require('../stores/category_store.js');
 const CategoryActions = require('../actions/category_action.js');
+const CategoryForm = require('./category_form.jsx');
+
 
 const ProductForm = React.createClass({
 
@@ -17,6 +19,7 @@ const ProductForm = React.createClass({
       description: "",
       category_ids: [],
       categories: CategoryStore.all(),
+      addCategory: false
     };
   },
   componentDidMount(){
@@ -72,6 +75,9 @@ const ProductForm = React.createClass({
       this.setState({category_ids: this.state.category_ids});
     }
 
+  },
+  generateCategoryForm(){
+    this.setState({addCategory: !this.state.addCategory});
   },
   render(){
     return (
@@ -141,10 +147,14 @@ const ProductForm = React.createClass({
                     );
                   })
                 }
-
+                {
+                  this.state.addCategory === true ? <CategoryForm /> : ""
+                }
                 <br />
 
-                <input type="submit" value="Submit" />
+
+                <input type="submit" value="Create Product" />
+                <button onClick={this.generateCategoryForm} type="button">Add Category</button>
               </form>
             </div>
 

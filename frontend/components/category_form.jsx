@@ -4,10 +4,12 @@ const SessionStore = require('../stores/session_store.js');
 const ErrorStore = require('../stores/error_store.js');
 const CategoryActions = require('../actions/category_action.js');
 const CategoryIndex = require('../components/categoryIndex.jsx');
+const ErrorActions = require('../actions/error_actions.js');
 
 const CategoryForm = React.createClass({
   
   getInitialState(){
+    ErrorActions.clearErrors();
     return {
       name: "",
     };
@@ -31,10 +33,8 @@ const CategoryForm = React.createClass({
   },
   fieldErrors(field){
     const errors = ErrorStore.formErrors(this.formType());
-    console.log(errors);
     if(!errors[field]) {return;}
     const messages = errors[field].map( (errorMsg, i) => {
-    console.log(errorMsg);
     return <li key={i}>{errorMsg}</li>;
     });
     return <ul>{messages}</ul>;
@@ -50,22 +50,15 @@ const CategoryForm = React.createClass({
     return (
             <div className="new-category-form">
 
-              <div className="category-index-content">
-              <CategoryIndex />
-              </div>
-              <br/>
-              <form onSubmit={this.handleSubmit} className="category-form-box">
-                <label> Product Category:
-                  {this.fieldErrors("name")}
+              <div className="category-form-box">
+                <label>
                   <input type="text" 
                     value={this.state.name} 
                     onChange={this.update("name")} 
                     className="name-input" />
                 </label>
-                <label>test</label>
-                <br/>
-                <input type="submit" value="Submit" />
-              </form>
+                <input onClick={this.handleSubmit} type="submit" value="Add" />
+              </div>
             </div>
 
     );
