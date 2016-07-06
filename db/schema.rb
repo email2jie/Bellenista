@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160703001306) do
+ActiveRecord::Schema.define(version: 20160706061603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20160703001306) do
 
   add_index "category_listings", ["categoryId"], name: "index_category_listings_on_categoryId", using: :btree
   add_index "category_listings", ["productId"], name: "index_category_listings_on_productId", using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.string   "name",        null: false
+    t.string   "description"
+    t.string   "url",         null: false
+    t.string   "thumb_url",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "images", ["name"], name: "index_images_on_name", unique: true, using: :btree
 
   create_table "product_categories", force: :cascade do |t|
     t.string   "name",       null: false

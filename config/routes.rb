@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :products, only: [:create, :destroy, :show, :index, :update]
     resources :product_categories, only: [:create, :destroy, :index, :update]
     resources :category_listings, only: [:create, :destroy, :index, :update]
+    resources :images, only: [:create, :destroy, :show, :index]
   end
 end
