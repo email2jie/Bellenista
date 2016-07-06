@@ -13,7 +13,6 @@ const CategoryListingApiUtil = {
       success,
       error(xhr) {
         const errors = xhr.responseJSON;
-        console.log(errors);
         error("category_listings/new", errors);
       }
     });

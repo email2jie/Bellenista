@@ -17,7 +17,6 @@ const CategoryApiUtil = {
       },
       error(xhr) {
         const errors = xhr.responseJSON;
-        console.log(errors);
         error("product-categories/new", errors);
       }
     });
