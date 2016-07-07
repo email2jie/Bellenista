@@ -3,6 +3,7 @@ const Link = require('react-router').Link;
 const SessionStore = require('../stores/session_store.js');
 const ErrorStore = require('../stores/error_store.js');
 const ProductStore = require('../stores/product_store.js');
+const ProductActions = require('../actions/product_action.js');
 const CategoryStore = require('../stores/category_store.js');
 const CategoryActions = require('../actions/category_action.js');
 const CategoryForm = require('./category_form.jsx');
@@ -192,8 +193,10 @@ const ProductUpdateForm = React.createClass({
 
                 <h3>Product Picture:</h3>
                 <select onChange={this.update("imgId")} value={this.state.imgId}>
+                  <option key="0" value=""></option>
                 {
                   Object.keys(this.state.images).map((key, idx) => {
+                  
                   return <option key={idx} value={this.state.images[key].id}>{this.state.images[key].name}</option>;
                   })
                 
