@@ -16,7 +16,7 @@ const ProductActions = {
     ProductApiUtil.deleteProduct(id, this.removeProduct);
   },
   updateProduct(id, data){
-    ProductApiUtil.updateProduct(id, data, this.updateProduct);
+    ProductApiUtil.updateProduct(id, data, this.editProduct);
   },
   receiveAllProducts(products){
     AppDispatcher.dispatch({
@@ -32,7 +32,7 @@ const ProductActions = {
   hashHistory.push(`/products/${product.id}/edit`);
   },
 
-  updateProduct(product){
+  editProduct(product){
     AppDispatcher.dispatch({
       actionType: ProductConstants.PRODUCT_RECEIVED,
       product: product

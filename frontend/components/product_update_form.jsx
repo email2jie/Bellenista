@@ -2,7 +2,6 @@ const React = require('react');
 const Link = require('react-router').Link;
 const SessionStore = require('../stores/session_store.js');
 const ErrorStore = require('../stores/error_store.js');
-const ProductActions = require('../actions/product_action.js');
 const ProductStore = require('../stores/product_store.js');
 const CategoryStore = require('../stores/category_store.js');
 const CategoryActions = require('../actions/category_action.js');
@@ -21,6 +20,7 @@ const ProductUpdateForm = React.createClass({
       price: 0,
       stock: 0,
       description: "",
+      imgId: 0,
       category_ids: [],
       categories: CategoryStore.all(),
       images: ImageStore.all(),
@@ -29,12 +29,13 @@ const ProductUpdateForm = React.createClass({
   },
   componentDidMount(){
     this.categoryListener = CategoryStore.addListener(this._categoriesChanged);
-    CategoryActions.fetchAllCategories();
-    this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
     this.imageStoreListener = ImageStore.addListener(this._imagesChanged);
-    ImageActions.fetchAllImages();
     this.productStoreListener = ProductStore.addListener(this.prefillState);
+    this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
+
     ProductActions.fetchAllProducts(); 
+    CategoryActions.fetchAllCategories();
+    ImageActions.fetchAllImages();
   },
   _categoriesChanged(){
     this.setState({categories: CategoryStore.all()});
@@ -54,7 +55,8 @@ const ProductUpdateForm = React.createClass({
     price: product.price,
     stock: product.stock,
     description: product.description,
-    category_ids: cat_ids
+    category_ids: cat_ids,
+    imgId: product.image_id
     })
 
   },
@@ -72,7 +74,8 @@ const ProductUpdateForm = React.createClass({
       price: parseFloat(this.state.price),
       stock: parseInt(this.state.stock),
       description: this.state.description,
-      category_ids: this.state.category_ids
+      category_ids: this.state.category_ids,
+      image_id: parseInt(this.state.imgId)
     };
     ProductActions.updateProduct(this.getProductId(), formData);
   },
@@ -114,6 +117,7 @@ const ProductUpdateForm = React.createClass({
     this.setState({addCategory: !this.state.addCategory});
   },
   render(){
+    console.log(this.state.imgId);
     return (
             <div className="new-product-form">
               <form onSubmit={this.handleSubmit} className="product-form-box">
@@ -186,6 +190,17 @@ const ProductUpdateForm = React.createClass({
                 }
                 <br />
 
+                <h3>Product Picture:</h3>
+                <select onChange={this.update("imgId")} value={this.state.imgId}>
+                {
+                  Object.keys(this.state.images).map((key, idx) => {
+                  return <option key={idx} value={this.state.images[key].id}>{this.state.images[key].name}</option>;
+                  })
+                
+                }
+                </select>
+                <br/>
+                <br/>
 
                 <input type="submit" value="Update Product" />
                 <button onClick={this.generateCategoryForm} type="button">Add Category</button>

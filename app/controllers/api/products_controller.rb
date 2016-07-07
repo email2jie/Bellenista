@@ -1,5 +1,4 @@
 class Api::ProductsController < ApplicationController
-  before_action :require_logged_in, only: [:create, :destroy, :update]
 
   def index
     @products = Product.all
@@ -26,6 +25,9 @@ class Api::ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
+    @img = Image.find(params[:product][:image_id])
+    @product.images.delete_all
+    @product.images << @img
     if @product.update(product_params)
       render :show
     else
@@ -44,7 +46,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :SKU, :price, :stock, :description, category_ids: [])
+    params.require(:product).permit(:name, :SKU, :price, :stock, :description, :image_id, category_ids: [])
   end
 
 
