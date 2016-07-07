@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  include Imageable
   validates :name, :SKU, :price, :stock, presence: true
   validates :name, :SKU, uniqueness: true
 

@@ -1,0 +1,17 @@
+ul.image-list{
+
+  margin: auto;
+  display:flex;
+  width: 60%;
+
+}
+li.image {
+  width: auto;
+
+}
+
+image-content {
+  margin: auto;
+  width: 60%;
+  height: auto;
+}

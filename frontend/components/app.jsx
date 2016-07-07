@@ -45,9 +45,14 @@ const App = React.createClass({
   },
 
   render() {
+   let showSplash;
+    if(this.props.location.pathname ==="/"){
+      showSplash = "splash"
+
+    }
+    
     return (
-      <div>
-        <div className="splash"></div>
+      <div className={showSplash}>
         <topbar>
           { this.greeting() }
         </topbar>

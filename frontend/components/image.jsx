@@ -23,13 +23,11 @@ const Image = React.createClass({
   componentWillUnmount(){
     this.imageListener.remove();
   },
-
-
   render(){
     return(<Image-Content>
       <UploadButton postImage={ImageActions.createImage} />
       
-      <ul>
+      <ul className="image-list">
         <ImageIndex images={this.state.images} />
       </ul>
 

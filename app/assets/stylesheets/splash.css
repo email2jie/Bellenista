@@ -1,9 +1,6 @@
 .splash {
 
-  background-image: url("file:///home/jie/Documents/appacademy/BellenistaApp/app/assets/images/front_page.jpg");
-  z-index: 999;
-  width: auto;
-  height: auto;
-  display: relative;
-
+  background: url("http://res.cloudinary.com/bellecdn/image/upload/v1467842991/xby8b0amfkeim63htq9c.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 800px;
 }
