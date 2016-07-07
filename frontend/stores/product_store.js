@@ -12,7 +12,6 @@ ProductStore.all = function(){
 ProductStore.find = function(id){
   return Object.assign({}, _products[id]);
 };
-
 function resetAllProducts(products){
   _products = products;
   ProductStore.__emitChange();

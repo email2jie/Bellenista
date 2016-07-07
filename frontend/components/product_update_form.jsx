@@ -3,22 +3,27 @@ const Link = require('react-router').Link;
 const SessionStore = require('../stores/session_store.js');
 const ErrorStore = require('../stores/error_store.js');
 const ProductActions = require('../actions/product_action.js');
+const ProductStore = require('../stores/product_store.js');
 const CategoryStore = require('../stores/category_store.js');
 const CategoryActions = require('../actions/category_action.js');
 const CategoryForm = require('./category_form.jsx');
+const ImageStore = require('../stores/image_store.js');
+const ImageActions = require('../actions/image_actions.js');
 
 
-const ProductForm = React.createClass({
+let product = {};
+const ProductUpdateForm = React.createClass({
 
   getInitialState(){
     return {
       name: "",
       SKU: "",
-      price: 0.00,
+      price: 0,
       stock: 0,
       description: "",
       category_ids: [],
       categories: CategoryStore.all(),
+      images: ImageStore.all(),
       addCategory: false
     };
   },
@@ -26,13 +31,38 @@ const ProductForm = React.createClass({
     this.categoryListener = CategoryStore.addListener(this._categoriesChanged);
     CategoryActions.fetchAllCategories();
     this.errorListener = ErrorStore.addListener(this.forceUpdate.bind(this));
+    this.imageStoreListener = ImageStore.addListener(this._imagesChanged);
+    ImageActions.fetchAllImages();
+    this.productStoreListener = ProductStore.addListener(this.prefillState);
+    ProductActions.fetchAllProducts(); 
   },
   _categoriesChanged(){
     this.setState({categories: CategoryStore.all()});
   },
+  _imagesChanged(){
+   this.setState({images: ImageStore.all()});
+  },
+  prefillState(){
+    product = ProductStore.find(this.getProductId());
+    let cat_ids = [];
+    product.categories.forEach(obj =>{
+      cat_ids.push(obj.id);
+    })
+    this.setState({
+    name: product.name,
+    SKU: product.SKU,
+    price: product.price,
+    stock: product.stock,
+    description: product.description,
+    category_ids: cat_ids
+    })
+
+  },
   componentWillUnmount(){
     this.errorListener.remove();
     this.categoryListener.remove();
+    this.productStoreListener.remove();
+    this.imageStoreListener.remove();
   },
   handleSubmit(e){
     e.preventDefault();
@@ -44,7 +74,7 @@ const ProductForm = React.createClass({
       description: this.state.description,
       category_ids: this.state.category_ids
     };
-    ProductActions.createProduct(formData);
+    ProductActions.updateProduct(this.getProductId(), formData);
   },
   fieldErrors(field){
     const errors = ErrorStore.formErrors(this.formType());
@@ -59,6 +89,11 @@ const ProductForm = React.createClass({
   },
   formType(){
     return this.props.location.pathname.slice(1);
+  },
+  getProductId(){
+    let pathname = this.props.location.pathname;
+    let arr = pathname.split("/");
+    return parseInt(arr[2]);
   },
   update(property){
     return (e) => this.setState({[property]: e.target.value});
@@ -152,7 +187,7 @@ const ProductForm = React.createClass({
                 <br />
 
 
-                <input type="submit" value="Create Product" />
+                <input type="submit" value="Update Product" />
                 <button onClick={this.generateCategoryForm} type="button">Add Category</button>
               </form>
             </div>
@@ -164,4 +199,4 @@ const ProductForm = React.createClass({
 });
 
 
-module.exports = ProductForm;
+module.exports = ProductUpdateForm;

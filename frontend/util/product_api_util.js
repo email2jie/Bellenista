@@ -5,11 +5,11 @@ const ProductApiUtil = {
       success
     });
   },
-  createProduct: function(product, success, error){
+  createProduct: function(data, success, error){
     $.ajax({
       url: 'api/products',
       type: 'POST',
-      data: product,
+      data: {product: data},
       success,
       error(xhr) {
         const errors = xhr.responseJSON;
@@ -17,11 +17,18 @@ const ProductApiUtil = {
       }
     });
   },
-  deleteProduct: function(data, success){
+  updateProduct: function(id, data, success){
     $.ajax({
-    
-
-      url: `api/products/${data.product.id}`,
+      url: `api/products/${id}`,
+      type: 'PATCH',
+      data: {product: data},
+      success
+    });
+  
+  },
+  deleteProduct: function(id, success){
+    $.ajax({
+      url: `api/products/${id}`,
       type: 'DELETE',
       success
     });

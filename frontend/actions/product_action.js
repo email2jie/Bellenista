@@ -5,17 +5,19 @@ const ErrorActions = require('../actions/error_actions.js');
 const hashHistory = require('react-router').hashHistory;
 
 const ProductActions = {
-  createProduct(product){
-    ProductApiUtil.createProduct(product, this.receiveProduct, ErrorActions.setErrors);
+  createProduct(data){
+    ProductApiUtil.createProduct(data, this.receiveProduct, ErrorActions.setErrors);
   },
 
   fetchAllProducts(){
     ProductApiUtil.fetchAllProducts(this.receiveAllProducts);
   },
-  deleteProduct(product){
-    ProductApiUtil.deleteProduct(product, this.removeProduct);
+  deleteProduct(id){
+    ProductApiUtil.deleteProduct(id, this.removeProduct);
   },
-
+  updateProduct(id, data){
+    ProductApiUtil.updateProduct(id, data, this.updateProduct);
+  },
   receiveAllProducts(products){
     AppDispatcher.dispatch({
       actionType: ProductConstants.PRODUCTS_RECEIVED,
@@ -27,9 +29,16 @@ const ProductActions = {
       actionType: ProductConstants.PRODUCT_RECEIVED,
       product: product
     });
-  hashHistory.push("/products");
+  hashHistory.push(`/products/${product.id}/edit`);
   },
 
+  updateProduct(product){
+    AppDispatcher.dispatch({
+      actionType: ProductConstants.PRODUCT_RECEIVED,
+      product: product
+    });
+  hashHistory.push(`/products`);
+  },
   removeProduct(product){
     AppDispatcher.dispatch({
       actionType: ProductConstants.PRODUCT_REMOVED,
