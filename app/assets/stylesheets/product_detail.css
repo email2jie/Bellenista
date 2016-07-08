@@ -36,9 +36,15 @@ div.product-detail h1 {
 
 }
 
-div.product-detail h3{
+div.product-detail h3 {
   font-style: normal;
-  font-size 24px;
-  font-weight 400;
+  font-size: 24px;
+  font-weight: 400;
   padding: 10px;
+}
+div.product-detail h3.SKU {
+  font-size: 12px;
+}
+div.product-detail h3.description {
+  font-size: 16px;
 }

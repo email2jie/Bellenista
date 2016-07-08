@@ -43,9 +43,9 @@ const ProductDetail = React.createClass({
               </div>
               <div className="product-detail">
               <h1>{this.state.product.name}</h1>
-              <h3>SKU:{this.state.product.SKU} </h3>
-              <h3>${this.state.product.price} </h3>
-              <h3>Size: {this.state.product.description} </h3>
+              <h3 className="SKU">SKU {this.state.product.SKU} </h3>
+              <h3 className="price">${this.state.product.price} </h3>
+              <h3 className="description">Size: {this.state.product.description} </h3>
               
               </div>
 
