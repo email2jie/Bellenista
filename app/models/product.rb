@@ -13,4 +13,6 @@ class Product < ActiveRecord::Base
   has_many :categories,
     through: :category_listings,
     source: :product_category
+
+  has_many :cart_items, dependent: :destroy
 end
