@@ -1,8 +1,11 @@
 const ProductApiUtil = {
-  fetchAllProducts: function(success){
+  fetchAllProducts: function(success, category){
     $.ajax({
       url: 'api/products',
-      success
+      success(resp){
+        success(resp, category);
+      }
+          
     });
   },
   createProduct: function(data, success, error){

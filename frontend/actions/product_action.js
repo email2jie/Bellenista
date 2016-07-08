@@ -9,8 +9,8 @@ const ProductActions = {
     ProductApiUtil.createProduct(data, this.receiveProduct, ErrorActions.setErrors);
   },
 
-  fetchAllProducts(){
-    ProductApiUtil.fetchAllProducts(this.receiveAllProducts);
+  fetchAllProducts(category){
+    ProductApiUtil.fetchAllProducts(this.receiveAllProducts, category);
   },
   deleteProduct(id){
     ProductApiUtil.deleteProduct(id, this.removeProduct);
@@ -18,10 +18,11 @@ const ProductActions = {
   updateProduct(id, data){
     ProductApiUtil.updateProduct(id, data, this.editProduct);
   },
-  receiveAllProducts(products){
+  receiveAllProducts(products, category){
     AppDispatcher.dispatch({
       actionType: ProductConstants.PRODUCTS_RECEIVED,
-      products: products
+      products: products,
+      category: category
     });
   },
   receiveProduct(product){

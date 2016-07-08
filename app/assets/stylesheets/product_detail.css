@@ -5,11 +5,9 @@ product img {
 }
 
 product {
-  width: 60%;
+  width: 50%;
   margin: auto;
-  display: block;
-  content: " ";
-  clear: both;
+  display: flex;
 
 }
 

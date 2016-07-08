@@ -17,7 +17,11 @@ const Product = React.createClass({
   },
   componentDidMount(){
     this.productListener = ProductStore.addListener(this._productsChanged);
-    ProductActions.fetchAllProducts();
+    ProductActions.fetchAllProducts(this.props.location.pathname.split("/")[2]);
+  },
+  componentWillReceiveProps(){
+    this.productListener = ProductStore.addListener(this._productsChanged);
+    ProductActions.fetchAllProducts(this.props.location.pathname.split("/")[2]);
   },
   componentWillUnmount(){
     this.productListener.remove();

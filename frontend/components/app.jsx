@@ -70,12 +70,12 @@ const App = React.createClass({
           <nav className="Main">
 
             <ul>
-              <li>New Arrivals</li>
-              <li>Tops</li>
-              <li>Bottoms</li>
-              <li>Dresses</li>
-              <li>Skirts</li>
-              <li>Jackets & Coats</li>
+              <Link to="/product-category/new-arrivals/"><li>New Arrivals</li></Link>
+              <Link to="/product-category/tops/"><li>Tops</li></Link>
+              <Link to="/product-category/bottoms/"><li>Bottoms</li></Link>
+              <Link to="/product-category/dresses/"><li>Dresses</li></Link>
+              <Link to="/product-category/skirts/"><li>Skirts</li></Link>
+              <Link to="/product-category/jackets-coats/"><li>Jackets & Coats</li></Link>
 
             </ul>
           

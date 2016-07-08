@@ -63,6 +63,10 @@ header nav.Main {
   width: 90%;
   padding-bottom: 50px;
 }
+header nav.Main a{
+  color: black;
+
+}
 
 topbar {
   content: "";
