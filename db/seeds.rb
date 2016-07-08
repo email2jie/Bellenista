@@ -1,25 +1,3 @@
-CategoryListing.create!([
-  {productId: 1, categoryId: 1},
-  {productId: 2, categoryId: 4},
-  {productId: 2, categoryId: 1},
-  {productId: 3, categoryId: 1},
-  {productId: 3, categoryId: 4},
-  {productId: 4, categoryId: 6},
-  {productId: 4, categoryId: 1},
-  {productId: 4, categoryId: 2},
-  {productId: 5, categoryId: 1},
-  {productId: 5, categoryId: 6},
-  {productId: 6, categoryId: 1},
-  {productId: 6, categoryId: 2},
-  {productId: 7, categoryId: 1},
-  {productId: 7, categoryId: 3},
-  {productId: 7, categoryId: 5},
-  {productId: 8, categoryId: 3},
-  {productId: 8, categoryId: 1},
-  {productId: 1, categoryId: 2},
-  {productId: 9, categoryId: 1},
-  {productId: 9, categoryId: 5}
-])
 Image.create!([
   {name: "front_page", description: nil, url: "http://res.cloudinary.com/bellecdn/image/upload/v1467842991/xby8b0amfkeim63htq9c.jpg", thumb_url: "http://res.cloudinary.com/bellecdn/image/upload/c_limit,h_60,w_90/v1467842991/xby8b0amfkeim63htq9c.jpg", resource_type: "image", upload_type: "upload", path: "v1467842991/xby8b0amfkeim63htq9c.jpg", height: "655", width: "1024", imageable_id: nil, imageable_type: nil},
   {name: "BellenistaColor", description: nil, url: "http://res.cloudinary.com/bellecdn/image/upload/v1467938131/bclt7oveeqn4huinfbol.png", thumb_url: "http://res.cloudinary.com/bellecdn/image/upload/c_limit,h_60,w_90/v1467938131/bclt7oveeqn4huinfbol.png", resource_type: "image", upload_type: "upload", path: "v1467938131/bclt7oveeqn4huinfbol.png", height: "183", width: "846", imageable_id: nil, imageable_type: nil},
@@ -56,4 +34,26 @@ ProductCategory.create!([
 User.create!([
   {username: "guest", password_digest: "$2a$10$KuAyAdjjfWWG7tLxTJWKaeYfH9LdpjrH6IGzebQ.4w5kzIXKQJkMG", session_token: "cPIGH3OcCDp5YvWjh+Dkbg=="},
   {username: "admin", password_digest: "$2a$10$gXlJjmPwi0YjQk1bemrt/.cVaVoEjvlDkckziSem.52fQ9lNaoaWe", session_token: "UQLwXq/ap7C02A5vK8zIbA=="}
+])
+CategoryListing.create!([
+  {productId: 1, categoryId: 1},
+  {productId: 2, categoryId: 4},
+  {productId: 2, categoryId: 1},
+  {productId: 3, categoryId: 1},
+  {productId: 3, categoryId: 4},
+  {productId: 4, categoryId: 6},
+  {productId: 4, categoryId: 1},
+  {productId: 4, categoryId: 2},
+  {productId: 5, categoryId: 1},
+  {productId: 5, categoryId: 6},
+  {productId: 6, categoryId: 1},
+  {productId: 6, categoryId: 2},
+  {productId: 7, categoryId: 1},
+  {productId: 7, categoryId: 3},
+  {productId: 7, categoryId: 5},
+  {productId: 8, categoryId: 3},
+  {productId: 8, categoryId: 1},
+  {productId: 1, categoryId: 2},
+  {productId: 9, categoryId: 1},
+  {productId: 9, categoryId: 5}
 ])
