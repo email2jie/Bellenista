@@ -18,6 +18,10 @@ product-content li {
   width: 33.33%;
 }
 
+product-content li:hover{
+
+}
+
 product-content a {
   cursor: pointer;
 }
@@ -30,5 +34,12 @@ li img {
   
   width: auto;
   z-index:-1;
+  cursor: pointer;
+
+}
+
+li img:hover{
+
+  opacity: 0.5;
 
 }

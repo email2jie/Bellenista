@@ -84,6 +84,7 @@ div.splash h2.header-name {
 }
 h2.header-name {
 
+  padding: 5px;
   float:left;
 }
 
@@ -93,10 +94,24 @@ hgroup.header-group {
 }
 input.header-button {
   float: left;
-  margin: 0 10px;
+  padding: 5px;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: #aa7fff;
 }
 
 a.new-product {
   float: left;
+  padding: 5px;
 
+}
+
+a.checkout {
+
+  float: left;
+  padding: 5px;
 }

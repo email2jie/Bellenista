@@ -2,7 +2,7 @@ const React = require("react");
 const ProductStore = require('../stores/product_store.js');
 const ProductActions = require('../actions/product_action.js');
 const SessionStore = require('../stores/session_store.js');
-const CartItemStore = window.CartItemStore = require('../stores/cart_item_store.js');
+const CartItemStore = require('../stores/cart_item_store.js');
 const CartItemActions = require('../actions/cart_item_actions.js');
 
 const ProductDetail = React.createClass({
@@ -34,6 +34,9 @@ const ProductDetail = React.createClass({
     this.storeListener.remove();
   },
   addToCart(e){
+    if(SessionStore.currentUser().username === undefined ){
+      alert("Sign in to add to cart!");
+    }
     let data = {cart_id: SessionStore.currentUser().id, product_id: e.target.value}
     let prod = this.checkForProduct(e.target.value);
     if(Object.keys(prod).length === 0){

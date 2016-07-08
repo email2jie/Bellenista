@@ -38,7 +38,7 @@ const CheckoutItem = React.createClass({
         <span className="quantity">Quantity: {item.quantity}</span>
         <span classname="proName">Name: {product.name}</span>
         <span classname="proSKU">SKU: {product.SKU}</span>
-        <span className="proImg"><img src={productImage}/></span>
+        <Link to={"/products/" + product.id}><span className="proImg"><img src={productImage}/></span></Link>
         <span classname="proPrice">Price: ${product.price}</span>
         <div className="buttons">
         <button type="button" onClick={this.handleClick} value={item.id}>Remove</button>

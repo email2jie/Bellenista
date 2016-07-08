@@ -8,8 +8,17 @@ topbar {
 
 .login-signup {
 
-  width: 130px;
+  width: auto;
   float: right;
   position: relative;
+  color: #aa7fff;
+  cursor: pointer;
+  padding: 5px;
+
+}
+
+.login-signup:hover {
+  background-color: #eee;
+  cursor: pointer;
 
 }

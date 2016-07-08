@@ -48,3 +48,27 @@ div.product-detail h3.SKU {
 div.product-detail h3.description {
   font-size: 16px;
 }
+
+div.product-detail button {
+
+  padding: 10px 15px;
+  color: #fff;
+  background: #aa7fff;
+  font-weight: 700;
+  border-radius: 5px;
+  margin: 0 2px;
+
+}
+
+div.product-detail button:hover {
+  background: #aa7fff;
+  cursor: pointer;
+  box-shadow: 0 3px 0 0 #5500ff;
+}
+
+
+div.product-detail button:active {
+  top: 3px;
+  background: #aa7fff;
+  box-shadow: none;
+}

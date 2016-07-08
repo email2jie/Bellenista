@@ -4,10 +4,6 @@ const hashHistory = require('react-router').hashHistory;
 
 const ProductItem = React.createClass({
 
-  handleClick(){
-
-
-  },
   render(){
   const product = this.props.product;
   const w = "264";
@@ -18,10 +14,9 @@ const ProductItem = React.createClass({
     productImage = productImage.replace("upload/", `upload/c_scale,h_${h},w_${w}/`);
   }
 
-  console.log(product);
   return (
     <Link to={"/products/" + product.id}>
-      <li value={product.id} onClick={this.handleClick}>
+      <li value={product.id} >
         <span>{product.name}</span>
         <img src={productImage}/>
       </li>

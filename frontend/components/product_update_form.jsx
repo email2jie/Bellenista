@@ -9,6 +9,7 @@ const CategoryActions = require('../actions/category_action.js');
 const CategoryForm = require('./category_form.jsx');
 const ImageStore = require('../stores/image_store.js');
 const ImageActions = require('../actions/image_actions.js');
+const UploadImageButton = require('../components/UploadButton.jsx');
 
 
 let product = {};
@@ -206,6 +207,7 @@ const ProductUpdateForm = React.createClass({
 
                 <input type="submit" value="Update Product" />
                 <button onClick={this.generateCategoryForm} type="button">Add Category</button>
+                <UploadImageButton postImage={ImageActions.createImage}/>
               </form>
             </div>
 

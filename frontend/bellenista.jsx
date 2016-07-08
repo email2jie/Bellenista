@@ -48,8 +48,8 @@ const appRouter = (
       <Route path="/products/new" component={ProductForm} onEnter={_ensureAdminUser} />
       <Route path="/products/:id" component={ProductDetail} />
       <Route path="/products/:id/edit" component={ProductUpdateForm} onEnter={_ensureAdminUser} />
-      <Route path="/checkout" component={Checkout} />
-      <Route path="/images/new" component={ImageForm} />
+      <Route path="/checkout" component={Checkout} onEnter={_ensureLoggedIn}/>
+      <Route path="/images/new" component={ImageForm} onEnter={_ensureAdminUser}/>
       <Route path='*' component={My404Component} />
     </Route>
   </Router>
