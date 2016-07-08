@@ -118,7 +118,6 @@ const ProductUpdateForm = React.createClass({
     this.setState({addCategory: !this.state.addCategory});
   },
   render(){
-    console.log(this.state.imgId);
     return (
             <div className="new-product-form">
               <form onSubmit={this.handleSubmit} className="product-form-box">
@@ -172,7 +171,7 @@ const ProductUpdateForm = React.createClass({
                   Object.keys(this.state.categories).map((key, idx) => {
                   const checked = (this.state.category_ids.includes(parseInt(key))) ? true : false;
                     return (
-                    <label>
+                    <label key={idx}>
                         <input
                           key={idx}
                           type="checkbox"

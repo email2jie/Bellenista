@@ -52,7 +52,7 @@ header ul li{
 
 header ul li:hover {
 
-  background-color: #eee;
+  background-color: #aa7fff;
 }
 
 header nav.Main {
@@ -61,6 +61,7 @@ header nav.Main {
   margin: auto;
   width: 90%;
   padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 topbar {
@@ -71,4 +72,27 @@ topbar {
   margin: auto;
 }
 
+div.splash li {
+  color: white;
+  text-shadow: 0 0 14px black;
+}
 
+div.splash h2.header-name {
+  color: white;
+  text-shadow: 0 0 14px black;
+  float:left;
+}
+
+hgroup.header-group {
+  display: inline-block;
+
+}
+input.header-button {
+  float: left;
+  margin: 0 10px;
+}
+
+a.new-product {
+  float: left;
+
+}

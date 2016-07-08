@@ -38,7 +38,17 @@ const ProductDetail = React.createClass({
     }
     return(
             <product key={this.state.product.id}>
+              <div className="product-img">
               <img src={url}/>
+              </div>
+              <div className="product-detail">
+              <h1>{this.state.product.name}</h1>
+              <h3>SKU:{this.state.product.SKU} </h3>
+              <h3>${this.state.product.price} </h3>
+              <h3>Size: {this.state.product.description} </h3>
+              
+              </div>
+
             </product>
     );
   }

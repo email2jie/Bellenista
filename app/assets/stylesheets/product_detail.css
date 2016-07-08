@@ -8,5 +8,37 @@ product {
   width: 60%;
   margin: auto;
   display: block;
+  content: " ";
+  clear: both;
 
+}
+
+.product-img {
+  display: inline-block;
+  float: left;
+  padding: 5px;
+  padding-left: 150px;
+
+}
+.product-detail {
+  display: inline-block;
+  float: left;
+  padding: 20px;
+
+}
+
+div.product-detail h1 {
+  
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 50px;
+
+}
+
+div.product-detail h3{
+  font-style: normal;
+  font-size 24px;
+  font-weight 400;
+  padding: 10px;
 }

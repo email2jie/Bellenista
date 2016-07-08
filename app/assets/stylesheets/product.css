@@ -4,27 +4,31 @@ product-content {
   margin: auto;
 }
 
+product-content ul {
+  width: 860px;
+  margin-bottom: 20px;
+  Overflow: hidden;
+  padding-left: 150px;
+}
 
 product-content li {
-  padding: 5px;
-  display: flex;
-  width: 100%;
-  text-align: center;
+  line-height: 1.5em;
+  float: left;
+  display: inline;
+  width: 33.33%;
+}
+
+product-content a {
+  cursor: pointer;
 }
 
 product-content span {
 
 }
 
-product-content ul {
-  display:flex;
-
-
-}
 li img {
   
   width: auto;
-  position:absolute;
   z-index:-1;
 
 }

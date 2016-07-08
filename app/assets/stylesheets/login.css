@@ -29,6 +29,7 @@
   margin: 20px 0 0 0;
   padding: 0 0 3px 0;
 }
+
 .submit > input {
   position: relative;
   padding: 10px 15px;
@@ -36,6 +37,7 @@
   background: #aa7fff;
   font-weight: 700;
   border-radius: 5px;
+  margin: 0 2px;
 }
 
 .submit > input:hover {
@@ -50,4 +52,6 @@
   background: #aa7fff;
   box-shadow: none;
 }
+
+
 
