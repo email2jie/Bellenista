@@ -65,7 +65,10 @@ ProductStore.__onDispatch = function(payload){
   switch(payload.actionType){
     case ProductConstants.PRODUCTS_RECEIVED:
       resetAllProducts(payload.products);
-      filter(payload.category);
+      if(payload.category !== undefined){
+        console.log("inside filter");
+        filter(payload.category);
+      }
       break;
     case ProductConstants.PRODUCT_RECEIVED:
       resetSingleProduct(payload.product);
