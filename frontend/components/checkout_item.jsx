@@ -27,7 +27,7 @@ const CheckoutItem = React.createClass({
   const w = "75";
   const h = "75";
   let productImage = "";
-  if(product.image.length >0){
+  if(product.image.length > 0){
     productImage = product.image[0].url;
     productImage = productImage.replace("upload/", `upload/c_fill,h_${h},w_${w}/`);
   }

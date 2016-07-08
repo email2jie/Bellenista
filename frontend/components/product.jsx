@@ -8,12 +8,12 @@ const ProductItem = require('./product_item');
 const Product = React.createClass({
   getInitialState() {
     return {
-      products: ProductStore.all()
+      products: ProductStore.filtered()
     };
   },
   
   _productsChanged(){
-    this.setState({products: ProductStore.all()});
+    this.setState({products: ProductStore.filtered()});
   },
   componentDidMount(){
     this.productListener = ProductStore.addListener(this._productsChanged);
@@ -24,10 +24,7 @@ const Product = React.createClass({
   },
   componentWillUnmount(){
     this.productListener.remove();
-  
   },
-
-
   render(){
     return(<Product-Content>
       <ul>

@@ -7,6 +7,10 @@ let _products = {};
 let _filtered = {};
 
 ProductStore.all = function(){
+  return Object.assign({}, _products);
+};
+
+ProductStore.filtered = function(){
   return Object.assign({}, _filtered);
 };
 
@@ -50,6 +54,7 @@ function filter(category){
       id = 6;
       break;
   }
+
   Object.keys(_products).forEach(keyy=>{
     _products[keyy].categories.forEach(keyx=>{
       if(keyx.id === id){
@@ -65,16 +70,15 @@ ProductStore.__onDispatch = function(payload){
   switch(payload.actionType){
     case ProductConstants.PRODUCTS_RECEIVED:
       resetAllProducts(payload.products);
-      if(payload.category !== undefined){
-        console.log("inside filter");
-        filter(payload.category);
-      }
+      filter(payload.category);
       break;
     case ProductConstants.PRODUCT_RECEIVED:
       resetSingleProduct(payload.product);
+      filter(payload.category);
       break;
     case ProductConstants.PRODUCT_REMOVED:
       removeSingleProduct(payload.product);
+      filter(payload.category);
       break;
   }
 
