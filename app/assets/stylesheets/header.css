@@ -82,6 +82,10 @@ div.splash h2.header-name {
   text-shadow: 0 0 14px black;
   float:left;
 }
+h2.header-name {
+
+  float:left;
+}
 
 hgroup.header-group {
   display: inline-block;
