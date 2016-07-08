@@ -4,6 +4,8 @@ const ProductActions = require('../actions/product_action.js');
 const SessionStore = require('../stores/session_store.js');
 const CartItemStore = require('../stores/cart_item_store.js');
 const CartItemActions = require('../actions/cart_item_actions.js');
+const ReviewIndex = require('../components/review.jsx');
+const ReviewForm = require('../components/review_form.js');
 
 const ProductDetail = React.createClass({
   getInitialState(){
@@ -19,15 +21,12 @@ const ProductDetail = React.createClass({
     
     this.storeListener = ProductStore.addListener(this.updateProduct);
     ProductActions.fetchAllProducts();
-    this.updateProduct();
     this.cartListener = CartItemStore.addListener(this._cartChanged);
     CartItemActions.fetchAllCartItems();
 
   },
   componentWillReceiveProps(){
-    
     this.updateProduct();
-
   },
   componentWillUnmount(){
     this.cartListener.remove();
@@ -75,6 +74,7 @@ const ProductDetail = React.createClass({
     }
     return(
             <product key={this.state.product.id}>
+              <div className="pro-detail">
               <div className="product-img">
               <img src={url}/>
               </div>
@@ -84,6 +84,12 @@ const ProductDetail = React.createClass({
               <h3 className="price">${this.state.product.price} </h3>
               <h3 className="description">Size: {this.state.product.description} </h3>
               <button type="button" onClick={this.addToCart} value={this.state.product.id}>Add To Cart</button> 
+              </div>
+            </div>
+
+              <div className="reviews">
+               <ReviewForm productId={this.state.product.id}/>
+               <ReviewIndex productId={this.state.product.id}/>
               </div>
 
             </product>

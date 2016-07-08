@@ -3,6 +3,8 @@ class Product < ActiveRecord::Base
   validates :name, :SKU, :price, :stock, presence: true
   validates :name, :SKU, uniqueness: true
 
+  has_many :reviews, dependent: :destroy
+
   has_many :category_listings,
     inverse_of: :product,
     dependent: :destroy,

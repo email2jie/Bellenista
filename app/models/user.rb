@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   before_validation :ensure_session_token_uniqueness
 
   has_one :cart, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
 
   def password=(password)
