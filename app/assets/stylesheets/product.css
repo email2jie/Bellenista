@@ -5,7 +5,7 @@ product-content {
 }
 
 product-content ul {
-  width: 80%;
+  width: 85%;
   margin-bottom: 20px;
   Overflow: hidden;
   margin: auto;
@@ -15,7 +15,9 @@ product-content li {
   line-height: 1.5em;
   float: left;
   display: inline;
-  width: 33.33%;
+  width: 30%;
+  min-width: 264px;
+  margin: 5px;
 }
 
 product-content li:hover{
