@@ -45,8 +45,9 @@ header ul li{
   float: left;
   display: block;
   text-align: center;
-  padding: 14px 25px;
+  padding: 14px 30px;
   text-decoration: none;
+  font-size: 24px;
   
 }
 
@@ -60,7 +61,6 @@ header nav.Main {
   display: flex;
   margin: auto;
   width: 90%;
-  padding-top: 50px;
   padding-bottom: 50px;
 }
 

@@ -1,0 +1,11 @@
+const CartItemConstants = {
+
+  CARTITEM_RECEIVED: "CARTITEM_RECEIVED",
+  CARTITEMS_RECEIVED: "CARTITEMS_RECEIVED",
+  CARTITEM_REMOVED: "CARTITEM_REMOVED"
+  
+
+
+};
+
+module.exports = CartItemConstants;

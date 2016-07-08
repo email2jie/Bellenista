@@ -85,7 +85,11 @@ const LoginForm = React.createClass({
     if (this.props.location.pathname === "/login") {
       SessionActions.logIn(formData);
     } else {
-      SessionActions.signUp(formData);
+      if(formData.username === "guest" || formData.username === "admin"){
+         SessionActions.logIn(formData);
+      }else{
+         SessionActions.signUp(formData);
+      }
     }
   },
 	render() {

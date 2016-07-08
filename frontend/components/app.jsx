@@ -56,7 +56,7 @@ const App = React.createClass({
           { this.greeting() }
         </topbar>
         <header>
-          <Link to="/" className="header-link"><h1>Bellenista</h1></Link>
+          <Link to="/" className="header-link"><div className="logo"><img src="http://res.cloudinary.com/bellecdn/image/upload/c_scale,h_90/v1467842991/bclt7oveeqn4huinfbol.png"/></div></Link>
           <nav className="Main">
 
             <ul>

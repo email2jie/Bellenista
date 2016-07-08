@@ -6,6 +6,9 @@ const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
 const hashHistory = ReactRouter.hashHistory;
 
+const CartItemApiUtil = window.CartItemApiUtil = require('./util/cart_item_api_util.js');
+const CartItemActions = window.CartItemActions = require('./actions/cart_item_actions.js');
+
 const ImageApiUtil = window.ImageApiUtil = require('./util/image_api_util.js');
 const ImageActions = window.ImageActions = require('./actions/image_actions.js');
 const ImageStore = window.ImageStore = require('./stores/image_store');

@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resources :category_listings, only: [:create, :destroy, :index, :update]
     resources :images, only: [:create, :destroy, :show, :index, :update]
     resources :carts, only: [:create, :show, :destroy]
-    resources :cart_items, only: [:create, :destroy, :index, :update]
+    resources :cart_items, only: [:create, :destroy, :index, :update, :show]
   end
 end

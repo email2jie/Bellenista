@@ -33,7 +33,13 @@ ProductCategory.create!([
 ])
 User.create!([
   {username: "guest", password_digest: "$2a$10$KuAyAdjjfWWG7tLxTJWKaeYfH9LdpjrH6IGzebQ.4w5kzIXKQJkMG", session_token: "cPIGH3OcCDp5YvWjh+Dkbg=="},
-  {username: "admin", password_digest: "$2a$10$gXlJjmPwi0YjQk1bemrt/.cVaVoEjvlDkckziSem.52fQ9lNaoaWe", session_token: "UQLwXq/ap7C02A5vK8zIbA=="}
+  {username: "admin", password_digest: "$2a$10$gXlJjmPwi0YjQk1bemrt/.cVaVoEjvlDkckziSem.52fQ9lNaoaWe", session_token: "UQLwXq/ap7C02A5vK8zIbA=="},
+  {username: "test", password_digest: "$2a$10$vCK5myYkCQ4.pc1w51Xg9uSZDnOWFPl6zb19.Wro7W1AMZQhY3FMW", session_token: "rJJ2CRTASsfS/9jFIvJuRQ=="},
+  {username: "test1", password_digest: "$2a$10$xPVqL2G1fr3nQlIJIbX3WeBOeAoM4ELlAXXnOSO2JlFUCk8/9PKlu", session_token: "l560rNs8bJ6OZB/tIrxE4w=="}
+])
+Cart.create!([
+  {user_id: 1},
+  {user_id: 2}
 ])
 CategoryListing.create!([
   {productId: 1, categoryId: 1},

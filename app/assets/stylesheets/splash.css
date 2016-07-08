@@ -2,5 +2,31 @@
 
   background: url("http://res.cloudinary.com/bellecdn/image/upload/v1467842991/xby8b0amfkeim63htq9c.jpg") no-repeat center center fixed;
   background-size: cover;
-  min-height: 800px;
+  min-height: 100%;
 }
+
+html {
+  height: 100%;
+}
+
+body {
+
+  height: 100%;
+}
+
+div#content {
+  height: 100%;
+
+}
+
+@media (min-width: 1120px), (min-height: 630px) {
+    body { background-size: auto; }
+}
+
+.logo {
+  max-width: 250px;
+  margin: auto;
+  padding: 20px;
+
+}
+
