@@ -25,6 +25,7 @@ const ProductStore = require('./stores/product_store.js');
 const Products = require('./components/product.jsx');
 const ProductForm = require('./components/product_form.jsx');
 const ProductUpdateForm = require('./components/product_update_form.jsx');
+const ProductDetail = require('./components/productDetail.jsx');
 
 const SessionActions = require('./actions/session_actions.js');
 const SessionStore = require('./stores/session_store.js');
@@ -40,6 +41,7 @@ const appRouter = (
       <Route path="/signup" component={ LoginForm } />
       <Route path="/products" component={ Products } />
       <Route path="/products/new" component={ProductForm} onEnter={_ensureAdminUser} />
+      <Route path="/products/:id" component={ProductDetail} />
       <Route path="/products/:id/edit" component={ProductUpdateForm} onEnter={_ensureAdminUser} />
       <Route path="/images/new" component={ImageForm} />
       <Route path='*' component={My404Component} />

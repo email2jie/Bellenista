@@ -1,19 +1,31 @@
 const React = require('react');
+const Link = require('react-router').Link;
 const hashHistory = require('react-router').hashHistory;
 
 const ProductItem = React.createClass({
 
+  handleClick(){
 
+
+  },
   render(){
   const product = this.props.product;
+  const w = "264";
+  const h = "356";
+  let productImage = "";
+  if(product.image.length >0){
+    productImage = product.image[0].url;
+    productImage = productImage.replace("upload/", `upload/c_scale,h_${h},w_${w}/`);
+  }
+
+  console.log(product);
   return (
-    <li>
-      <span>{product.name}</span>
-      <span>{product.SKU}</span>
-      <span>{product.price}</span>
-      <span>{product.stock}</span>
-      <span>{product.description}</span>
-    </li>
+    <Link to={"/products/" + product.id}>
+      <li value={product.id} onClick={this.handleClick}>
+        <span>{product.name}</span>
+        <img src={productImage}/>
+      </li>
+    </Link>
     )
   }
 

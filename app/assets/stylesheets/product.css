@@ -7,11 +7,24 @@ product-content {
 
 product-content li {
   padding: 5px;
+  display: flex;
+  width: 100%;
+  text-align: center;
 }
 
 product-content span {
 
-  display: list-item;
+}
 
+product-content ul {
+  display:flex;
+
+
+}
+li img {
+  
+  width: auto;
+  position:absolute;
+  z-index:-1;
 
 }

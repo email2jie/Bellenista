@@ -4,3 +4,9 @@ json.categories do
     json.extract! category, :id
   end
 end
+
+json.image do
+  json.array! product.images do |image|
+    json.extract! image, :url
+  end
+end
