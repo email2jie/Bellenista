@@ -52,7 +52,6 @@ function filter(category){
   }
   Object.keys(_products).forEach(keyy=>{
     _products[keyy].categories.forEach(keyx=>{
-      console.log(keyx.id);
       if(keyx.id === id){
         _filtered[_products[keyy].id] = _products[keyy];
       }

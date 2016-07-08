@@ -20,11 +20,13 @@ const Product = React.createClass({
     ProductActions.fetchAllProducts(this.props.location.pathname.split("/")[2]);
   },
   componentWillReceiveProps(){
-    this.productListener = ProductStore.addListener(this._productsChanged);
+    this.product2Listener = ProductStore.addListener(this._productsChanged);
     ProductActions.fetchAllProducts(this.props.location.pathname.split("/")[2]);
   },
   componentWillUnmount(){
     this.productListener.remove();
+    this.product2Listener.remove();
+  
   },
 
 
