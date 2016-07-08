@@ -5,10 +5,10 @@ product-content {
 }
 
 product-content ul {
-  width: 860px;
+  width: 80%;
   margin-bottom: 20px;
   Overflow: hidden;
-  padding-left: 150px;
+  margin: auto;
 }
 
 product-content li {
