@@ -1,6 +1,5 @@
 class Api::CartItemsController < ApplicationController
   def index
-    debugger;
     if(current_user)
       @cart_items = CartItem.all.where(cart_id: current_user.id)
     else
