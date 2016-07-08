@@ -7,13 +7,14 @@ const ProductItem = require('./product_item');
 
 const Product = React.createClass({
   getInitialState() {
-    return {products: ProductStore.all()};
+    return {
+      products: ProductStore.all()
+    };
   },
   
   _productsChanged(){
     this.setState({products: ProductStore.all()});
   },
-  
   componentDidMount(){
     this.productListener = ProductStore.addListener(this._productsChanged);
     ProductActions.fetchAllProducts();

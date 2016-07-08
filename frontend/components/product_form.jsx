@@ -132,7 +132,7 @@ const ProductForm = React.createClass({
                   Object.keys(this.state.categories).map((key, idx) => {
                   const checked = (this.state.category_ids.includes(parseInt(key))) ? true : false;
                     return (
-                    <label>
+                    <label key={idx}>
                         <input
                           key={idx}
                           type="checkbox"

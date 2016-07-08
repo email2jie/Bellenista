@@ -9,6 +9,7 @@ const hashHistory = ReactRouter.hashHistory;
 const CartItemApiUtil = require('./util/cart_item_api_util.js');
 const CartItemActions = require('./actions/cart_item_actions.js');
 const CartItemStore = require('./stores/cart_item_store.js');
+const Checkout = require('./components/checkout.jsx');
 
 const ImageApiUtil = require('./util/image_api_util.js');
 const ImageActions = require('./actions/image_actions.js');
@@ -47,6 +48,7 @@ const appRouter = (
       <Route path="/products/new" component={ProductForm} onEnter={_ensureAdminUser} />
       <Route path="/products/:id" component={ProductDetail} />
       <Route path="/products/:id/edit" component={ProductUpdateForm} onEnter={_ensureAdminUser} />
+      <Route path="/checkout" component={Checkout} />
       <Route path="/images/new" component={ImageForm} />
       <Route path='*' component={My404Component} />
     </Route>

@@ -1,0 +1,56 @@
+cartitem-content {
+  width: 60%;
+  margin: auto;
+  display: block;
+}
+
+cartitem-content ul{
+  display: inline;
+  float: left;
+  width:100%;
+  padding-left: 50px;
+
+}
+
+cartitem-content li{
+ display: list; 
+ float: left;
+ width: 100%;
+}
+
+cartitem-content li span{
+  float: left;
+  padding: 5px;
+  text-align: center;
+  width: 13%;
+
+}
+
+div.buttons{
+  width: 10%;
+
+  float: left;
+  align-content: center;
+}
+cartitem-content li button{
+  padding: 5px;
+  width:100%;
+
+}
+
+div.total {
+
+  display: inline;
+  float: right;
+  padding-right: 230px;
+  padding-top: 20px;
+
+
+}
+
+cartitem-content h1{
+  font-size: x-large;
+  font-weight: 400;
+  padding: 20px;
+
+}

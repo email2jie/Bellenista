@@ -1,16 +1,28 @@
 const React = require("react");
 const ProductStore = require('../stores/product_store.js');
 const ProductActions = require('../actions/product_action.js');
+const SessionStore = require('../stores/session_store.js');
+const CartItemStore = window.CartItemStore = require('../stores/cart_item_store.js');
+const CartItemActions = require('../actions/cart_item_actions.js');
 
 const ProductDetail = React.createClass({
   getInitialState(){
-    return {product: ProductStore.find(this.getProductId())};
+      return {
+        product: ProductStore.find(this.getProductId()),
+        cartItem: CartItemStore.all()
+      };
+  },
+  _cartChanged(){
+    this.setState({cartItem: CartItemStore.all()});
   },
   componentDidMount(){
     
     this.storeListener = ProductStore.addListener(this.updateProduct);
     ProductActions.fetchAllProducts();
     this.updateProduct();
+    this.cartListener = CartItemStore.addListener(this._cartChanged);
+    CartItemActions.fetchAllCartItems();
+
   },
   componentWillReceiveProps(){
     
@@ -18,7 +30,30 @@ const ProductDetail = React.createClass({
 
   },
   componentWillUnmount(){
+    this.cartListener.remove();
     this.storeListener.remove();
+  },
+  addToCart(e){
+    let data = {cart_id: SessionStore.currentUser().id, product_id: e.target.value}
+    let prod = this.checkForProduct(e.target.value);
+    if(Object.keys(prod).length === 0){
+      CartItemActions.createCartItem(data);
+    }else{
+      data = prod;
+      data.quantity += 1;
+      CartItemActions.updateCartItem(data.id, data);
+    }
+    prod = {};
+  },
+  checkForProduct(id){
+   let product = {}; 
+    Object.keys(this.state.cartItem).forEach(key=>{
+      if(this.state.cartItem[key].product_id === parseInt(id)){
+        product = this.state.cartItem[key];
+      }
+    });
+
+    return product;
   },
   updateProduct(){
     this.setState({product: ProductStore.find(this.getProductId())});
@@ -29,7 +64,6 @@ const ProductDetail = React.createClass({
     return arr[2];
   },
   render() {
-    console.log(this.state.product);
     const w = "425";
     const h = "567";
     let url = "";
@@ -46,7 +80,7 @@ const ProductDetail = React.createClass({
               <h3 className="SKU">SKU {this.state.product.SKU} </h3>
               <h3 className="price">${this.state.product.price} </h3>
               <h3 className="description">Size: {this.state.product.description} </h3>
-              
+              <button type="button" onClick={this.addToCart} value={this.state.product.id}>Add To Cart</button> 
               </div>
 
             </product>

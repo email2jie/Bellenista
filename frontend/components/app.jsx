@@ -22,6 +22,15 @@ const App = React.createClass({
     }
   },
 
+  _ensureLoggedIn(){
+    if(SessionStore.currentUser().username !== undefined){
+      return <Link to="/checkout" className="checkout">Checkout</Link>
+    }else{
+
+      return ""
+    }
+  },
+
   greeting() {
     if (SessionStore.isUserLoggedIn()) {
 
@@ -30,6 +39,7 @@ const App = React.createClass({
     			<h2 className="header-name">Hi, {SessionStore.currentUser().username}!</h2>
     			<input className="header-button" type="submit" value="logout" onClick={ this._handleLogOut } />
           {this._ensureAdmin()}
+          {this._ensureLoggedIn()}
     		</hgroup>
     	);
     } else if ( !["/login", "/signup"].includes(this.props.location.pathname) ) {
