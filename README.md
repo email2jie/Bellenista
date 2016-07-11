@@ -19,21 +19,21 @@ Using the React router and hash history, the root page will render different com
 
 ### Authentication
 ![loginform]
-[loginform] ./docs/images/login.png
+[loginform]: ./docs/images/login.png
 
 Authentication is custom made using a session store to demontrate fluency in react and the flux cycle.
 
 ### Search/Filtering By Category
 
 ![category]
-[category] ./docs/images/category.png
+[category]: ./docs/images/category.png
 
 Users will be able to browse by categories.
 
 
 ### Adding New Items
 ![productform]
-[productform] ./docs/images/new_product.png
+[productform]: ./docs/images/new_product.png
 
 Only admin has access to adding new items, pictures for items, and editing items.
 
@@ -46,7 +46,7 @@ Only registered users can add items to cart and checkout.
 
 # Comments and Reviews
 ![comments]
-[comments] ./docs/images/comments.png
+[comments]: ./docs/images/comments.png
 
 Only registered users can add coments but all users will be able to see comments made by other users.
 
