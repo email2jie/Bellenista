@@ -36,10 +36,7 @@ function filter(id){
 
   Object.keys(_reviews).forEach(key => {
     if(_reviews[key].product_id === id){
-      console.log(_reviews[key].product_id, id);
-      console.log(_filtered);
       _filtered[_reviews[key].id] = _reviews[key];
-      console.log(_filtered);
     }
   });
   ReviewStore.__emitChange();
@@ -54,7 +51,7 @@ ReviewStore.__onDispatch = function(payload){
         break;
       case ReviewConstants.REVIEW_RECEIVED:
         resetSingleReview(payload.review);
-        filter(payload.filter);
+        filter(payload.review.product_id);
         break;
       case ReviewConstants.REVIEW_REMOVED: 
         removeSingleReview(payload.review);

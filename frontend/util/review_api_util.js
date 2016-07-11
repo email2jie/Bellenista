@@ -13,7 +13,7 @@ const ReviewApiUtil = {
             type: 'POST',
             data: {review: data},
             success(resp){
-              success(resp);
+              success(resp),
               callback();
             },
             error(xhr) {

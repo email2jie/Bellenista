@@ -65,6 +65,13 @@ const ProductDetail = React.createClass({
     let arr = path.split("/");
     return arr[2];
   },
+  ensureLoggedInReviewForm(){
+    if(SessionStore.currentUser().username){
+      return <ReviewForm productId={this.state.product.id}/>;
+    }else{
+      return <div>Please Log In to Add Comment.</div>
+    }
+  },
   render() {
     const w = "425";
     const h = "567";
@@ -88,7 +95,7 @@ const ProductDetail = React.createClass({
             </div>
 
               <div className="reviews">
-               <ReviewForm productId={this.state.product.id}/>
+                {this.ensureLoggedInReviewForm()}
                <ReviewIndex productId={this.state.product.id}/>
               </div>
 

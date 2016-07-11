@@ -11,7 +11,7 @@ const ReviewItem = React.createClass({
       <li value={review.id} >
         <span className="timestamp">{review.age}</span>
         <br/>
-        <span>{review.username +": " +review.review}</span>
+        <span>{review.username.charAt(0).toUpperCase() + review.username.slice(1) +": " +review.review}</span>
       </li>
     )
   }

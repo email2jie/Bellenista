@@ -29,7 +29,7 @@ const Review = React.createClass({
     return(<Review-Content>
       <ul>
         {
-        Object.keys(this.state.reviews).map(key => {
+        Object.keys(this.state.reviews).reverse().map(key => {
           let review = this.state.reviews[key];
             return (<ReviewItem key={review.id} review={review} />);
         })
