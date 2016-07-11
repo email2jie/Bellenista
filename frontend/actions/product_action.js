@@ -38,7 +38,7 @@ const ProductActions = {
       actionType: ProductConstants.PRODUCT_RECEIVED,
       product: product
     });
-  hashHistory.push(`/products`);
+  hashHistory.push(`/products/${product.id}`);
   },
   removeProduct(product){
     AppDispatcher.dispatch({
