@@ -11,7 +11,7 @@ ReviewStore.all = function(){
 };
 
 ReviewStore.filtered = function(){
-  return Object.assign({}, _reviews);
+  return Object.assign({}, _filtered);
 
 };
 ReviewStore.find = function(id){
@@ -32,10 +32,14 @@ function removeSingleReview(review){
   ReviewStore.__emitChange();
 }
 function filter(id){
+  _filtered = {};
 
-  Object.keys(_reviews).forEach(key=>{
+  Object.keys(_reviews).forEach(key => {
     if(_reviews[key].product_id === id){
+      console.log(_reviews[key].product_id, id);
+      console.log(_filtered);
       _filtered[_reviews[key].id] = _reviews[key];
+      console.log(_filtered);
     }
   });
   ReviewStore.__emitChange();

@@ -42,7 +42,7 @@ const ReviewForm = React.createClass({
                     onChange={this.update("review")}
                     className="review-input"></textarea>
                 <br/>
-                <input onClick={this.handleSubmit} type="submit" value="Add Review" />
+                <input className="review-button" onClick={this.handleSubmit} type="submit" value="Add Review" />
               </div>
 
     );
