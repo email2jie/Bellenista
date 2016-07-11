@@ -7,6 +7,7 @@ header {
 header ul {
 
 
+  width: 100%;
   margin: auto;
   list-style-type: none;
   padding: 0;
@@ -42,12 +43,13 @@ header ul li{
   /*display: flex;*/
   /*padding: 0 20px;*/
   /*margin: auto;*/
+  width: 15%;
   float: left;
   display: block;
   text-align: center;
-  padding: 14px 30px;
+  padding: 14px 5px;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 16px;
   
 }
 
@@ -60,7 +62,7 @@ header nav.Main {
 
   display: flex;
   margin: auto;
-  width: 90%;
+  width: 100%;
   padding-bottom: 50px;
 }
 header nav.Main a{
