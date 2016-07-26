@@ -19,8 +19,8 @@ const Product = React.createClass({
     this.productListener = ProductStore.addListener(this._productsChanged);
     ProductActions.fetchAllProducts(this.props.location.pathname.split("/")[2]);
   },
-  componentWillReceiveProps(){
-    ProductActions.fetchAllProducts(this.props.location.pathname.split("/")[2]);
+  componentWillReceiveProps(nextProps){
+    ProductActions.fetchAllProducts(nextProps.location.pathname.split("/")[2]);
   },
   componentWillUnmount(){
     this.productListener.remove();
@@ -31,7 +31,7 @@ const Product = React.createClass({
         {
         Object.keys(this.state.products).map(key => {
           let product = this.state.products[key];
-            return (<ProductItem key={product.SKU} product={product} />);
+            return (<ProductItem key={product.SKU} product={product} productStore={this.state.products}/>);
         })
 
         }
