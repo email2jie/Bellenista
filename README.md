@@ -1,4 +1,4 @@
-b# Bellenista
+# Bellenista
 
 [Bellenista live][heroku]
 
@@ -39,7 +39,7 @@ Only admin has access to adding new items, pictures for items, and editing items
 
 # Shopping Cart
 ![checkout]
-[checkout] ./docs/images/checkout.png
+[checkout]: ./docs/images/checkout.png
 
 Only registered users can add items to cart and checkout.
 
